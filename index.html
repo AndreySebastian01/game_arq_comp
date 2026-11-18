@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#172a4e">
+  <meta name="description" content="Conecte seus conhecimentos de Arquitetura Computacional em uma cruzadinha e um quiz com 16 conceitos.">
+  <title>Quiz Arq. Comp.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <svg class="icones" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <symbol id="icone-marca" viewBox="0 0 32 32">
+        <rect x="1" y="1" width="8" height="8" rx="1.5" fill="currentColor"/>
+        <rect x="12" y="1" width="8" height="8" rx="1.5" fill="currentColor"/>
+        <rect x="23" y="1" width="8" height="8" rx="1.5" fill="#e8105e"/>
+        <rect x="1" y="12" width="8" height="8" rx="1.5" fill="currentColor"/>
+        <rect x="12" y="12" width="8" height="8" rx="1.5" fill="#8adbe6"/>
+        <rect x="23" y="12" width="8" height="8" rx="1.5" fill="currentColor"/>
+        <rect x="1" y="23" width="8" height="8" rx="1.5" fill="currentColor"/>
+        <rect x="12" y="23" width="8" height="8" rx="1.5" fill="currentColor"/>
+      </symbol>
+      <symbol id="icone-grade" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></g></symbol>
+      <symbol id="icone-livro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5c-3-2-6-2-10-1v15c4-1 7-1 10 1 3-2 6-2 10-1V4c-4-1-7-1-10 1Zm0 0v15"/></g></symbol>
+      <symbol id="icone-quiz" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/><rect x="8" y="2" width="6" height="4" rx="1"/><path d="m7 13 2 2 5-5M7 18h7"/></g></symbol>
+      <symbol id="icone-salvo" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></g></symbol>
+      <symbol id="icone-relogio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+      <symbol id="icone-conferir" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></g></symbol>
+      <symbol id="icone-reiniciar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></g></symbol>
+      <symbol id="icone-dica" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18v-2c0-2-4-3-4-7a7 7 0 0 1 14 0c0 4-4 5-4 7v2ZM9 21h6M9 18h6M12 6v4"/></g></symbol>
+      <symbol id="icone-olho" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></g></symbol>
+      <symbol id="icone-cadeado" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></g></symbol>
+      <symbol id="icone-direita" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></g></symbol>
+      <symbol id="icone-baixo" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15m-6-6 6 6 6-6"/></g></symbol>
+      <symbol id="icone-esquerda" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5m6-6-6 6 6 6"/></g></symbol>
+      <symbol id="icone-cima" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V5m-6 6 6-6 6 6"/></g></symbol>
+      <symbol id="icone-ajuda" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-1 .5-1 1-1 2M12 17h.01"/></g></symbol>
+      <symbol id="icone-teclado" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 9h.01M10 9h.01M14 9h.01M18 9h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M7 16h10"/></g></symbol>
+      <symbol id="icone-trofeu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v7a4 4 0 0 1-8 0V3Zm0 2H4v3a4 4 0 0 0 4 4m8-7h4v3a4 4 0 0 1-4 4M12 14v5M8 21h8M10 19h4"/></g></symbol>
+      <symbol id="icone-memoria" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7" height="9" rx="1.5"/><rect x="14" y="4" width="7" height="9" rx="1.5"/><rect x="3" y="15" width="7" height="5" rx="1.5"/><rect x="14" y="15" width="7" height="5" rx="1.5"/></g></symbol>
+      <symbol id="icone-sol" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></g></symbol>
+      <symbol id="icone-lua" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></g></symbol>
+    </defs>
+  </svg>
+
+  <header class="cabecalho">
+    <div class="conteudo">
+      <div class="marca" aria-label="Arquitetura Computacional">
+        <svg aria-hidden="true"><use href="#icone-marca"></use></svg>
+        <span>arq<span>.</span>comp</span>
+      </div>
+      <div class="contexto">
+        <span class="academico">PROJETO ACADÊMICO</span><span class="separador"></span>
+        <svg aria-hidden="true"><use href="#icone-livro"></use></svg>
+        <span>Arquitetura Computacional</span>
+        <span class="separador"></span>
+        <button id="alternar-tema" class="botao-tema" type="button" aria-label="Alternar entre modo claro e escuro">
+          <svg id="icone-tema" aria-hidden="true"><use href="#icone-lua"></use></svg>
+          <span id="texto-tema">Modo escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <section class="apresentacao" aria-labelledby="titulo">
+      <div><p class="sobretitulo">DO CONCEITO À CONEXÃO</p><h1 id="titulo">Quiz Arq. Comp.</h1></div>
+      <p>Explore os conceitos. Cruze as ideias.<br><strong>O próximo conhecimento se conecta aqui.</strong></p>
+    </section>
+
+    <div class="linha-abas">
+      <nav class="abas" role="tablist" aria-label="Modalidades do jogo">
+        <button class="aba" id="aba-cruzadinha" role="tab" aria-selected="true" aria-controls="secao-cruzadinha" type="button">
+          <svg aria-hidden="true"><use href="#icone-grade"></use></svg>Cruzadinha
+        </button>
+        <button class="aba" id="aba-quiz" role="tab" aria-selected="false" aria-controls="secao-quiz" type="button">
+          <svg aria-hidden="true"><use href="#icone-quiz"></use></svg>Quiz
+        </button>
+        <button class="aba" id="aba-memoria" role="tab" aria-selected="false" aria-controls="secao-memoria" type="button">
+          <svg aria-hidden="true"><use href="#icone-memoria"></use></svg>Memória
+        </button>
+      </nav>
+      <div class="salvamento" id="indicador-salvamento" title="Seu progresso fica salvo neste navegador.">
+        <svg aria-hidden="true"><use href="#icone-salvo"></use></svg><span id="status-salvamento">Seu progresso fica salvo neste navegador</span>
+      </div>
+    </div>
+
+    <p id="aviso-armazenamento" class="aviso-armazenamento" role="status" hidden></p>
+    <p id="erro-inicializacao" class="erro-inicializacao" role="alert" hidden></p>
+
+    <section id="secao-cruzadinha" class="secao-jogo" role="tabpanel" aria-labelledby="aba-cruzadinha">
+      <div class="layout-cruzadinha">
+        <div>
+          <div class="cartao-tabuleiro">
+            <div class="topo-tabuleiro">
+              <div><h2>Seu tabuleiro</h2><span class="texto-auxiliar">Uma letra de cada vez.</span></div>
+              <div class="indicadores">
+                <div class="indicador"><span class="rotulo">PONTUAÇÃO</span><strong id="pontuacao">0 de 16 palavras</strong></div>
+                <div class="indicador"><span class="rotulo">TEMPO</span><strong><svg aria-hidden="true"><use href="#icone-relogio"></use></svg><span id="tempo">00:00</span></strong></div>
+              </div>
+            </div>
+            <div class="envoltorio-tabuleiro">
+              <div class="rolagem-tabuleiro" id="rolagem-tabuleiro">
+                <div id="tabuleiro" class="tabuleiro" role="grid" aria-label="Cruzadinha de 14 linhas por 16 colunas. Clique em uma casa ou pista e digite as letras." aria-rowcount="14" aria-colcount="16"></div>
+              </div>
+              <div class="legenda" aria-label="Legenda do tabuleiro">
+                <span><i class="amostra selecionada"></i>Selecionada</span>
+                <span><i class="amostra correta"></i>Correta</span>
+                <span><i class="amostra incorreta"></i>Incorreta</span>
+              </div>
+            </div>
+            <div class="acoes-tabuleiro">
+              <button id="botao-conferir" class="botao botao-principal" type="button"><svg aria-hidden="true"><use href="#icone-conferir"></use></svg>Conferir</button>
+              <button id="reiniciar-cruzadinha" class="botao botao-discreto" type="button"><svg aria-hidden="true"><use href="#icone-reiniciar"></use></svg>Reiniciar</button>
+            </div>
+            <p id="mensagem-tabuleiro" class="mensagem-tabuleiro" role="status"></p>
+            <div id="vitoria" class="vitoria" role="status" hidden>
+              <svg aria-hidden="true"><use href="#icone-trofeu"></use></svg>
+              <div><h3>Todas as conexões foram feitas!</h3><p id="resumo-vitoria"></p></div>
+            </div>
+          </div>
+          <div class="abaixo-tabuleiro">
+            <details class="ajuda">
+              <summary><svg aria-hidden="true"><use href="#icone-ajuda"></use></svg><span>Como jogar</span></summary>
+              <p>Escolha uma pista e digite nas casas. Em um cruzamento, clique duas vezes na mesma casa para alternar o sentido.</p>
+              <p>Use as setas para navegar, <kbd>Backspace</kbd> para apagar e <kbd>Tab</kbd> ou <kbd>Shift + Tab</kbd> para trocar de palavra. Em telas pequenas, deslize o tabuleiro para os lados.</p>
+              <p>Cada palavra correta vale 1 ponto. Com dica, vale 0,5. Uma resposta revelada vale 0. O tempo começa na primeira letra digitada.</p>
+            </details>
+            <button class="alternar-teclado" id="alternar-teclado" aria-expanded="false" aria-controls="teclado" type="button"><svg aria-hidden="true"><use href="#icone-teclado"></use></svg>Teclado na tela</button>
+          </div>
+          <div id="teclado" class="teclado" aria-label="Teclado na tela" hidden>
+            <div id="teclas-letras"></div>
+            <div class="linha-teclado" id="teclas-navegacao">
+              <button class="tecla" data-seta="esquerda" aria-label="Mover para a esquerda" type="button"><svg aria-hidden="true"><use href="#icone-esquerda"></use></svg></button>
+              <button class="tecla" data-seta="cima" aria-label="Mover para cima" type="button"><svg aria-hidden="true"><use href="#icone-cima"></use></svg></button>
+              <button class="tecla" data-seta="baixo" aria-label="Mover para baixo" type="button"><svg aria-hidden="true"><use href="#icone-baixo"></use></svg></button>
+              <button class="tecla" data-seta="direita" aria-label="Mover para a direita" type="button"><svg aria-hidden="true"><use href="#icone-direita"></use></svg></button>
+              <button class="tecla apagar" id="tecla-apagar" type="button">Apagar</button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="coluna-pistas" aria-label="Pistas e explicação">
+          <section class="painel-pista" aria-label="Pista selecionada">
+            <div class="cabecalho-pista">
+              <span class="identificador-pista"><svg id="sentido-pista" aria-hidden="true"><use href="#icone-baixo"></use></svg><span id="identificador-pista">1 · VERTICAL</span></span>
+              <span id="quantidade-letras" class="quantidade-letras"></span>
+            </div>
+            <p id="pista-destaque" class="pista-destaque"></p>
+            <div class="acoes-pista">
+              <button id="botao-dica" class="botao botao-secundario" title="Mostra a primeira letra. A palavra passa a valer 0,5 ponto." type="button"><svg aria-hidden="true"><use href="#icone-dica"></use></svg><span id="texto-botao-dica">Dica</span></button>
+              <button id="botao-revelar" class="botao botao-secundario" title="Preenche a resposta. A palavra passa a valer zero ponto." type="button"><svg aria-hidden="true"><use href="#icone-olho"></use></svg><span id="texto-botao-revelar">Revelar resposta</span></button>
+            </div>
+            <p id="dica-usada" class="dica-usada" role="status" hidden></p>
+            <p id="situacao-palavra" class="situacao-palavra" hidden></p>
+            <div id="aviso-explicacao" class="aviso-explicacao"><svg aria-hidden="true"><use href="#icone-cadeado"></use></svg><span>A explicação aparece depois de Conferir ou de revelar a resposta.</span></div>
+            <div id="explicacao" class="explicacao" hidden><h3 id="nome-termo"></h3><p id="texto-explicacao"></p></div>
+          </section>
+          <section aria-labelledby="titulo-pistas">
+            <div class="titulo-pistas"><h2 id="titulo-pistas">Siga as pistas</h2><span>16 conceitos para conectar</span></div>
+            <div class="grupos-pistas">
+              <div class="grupo-pistas"><h3><svg aria-hidden="true"><use href="#icone-direita"></use></svg>Horizontais</h3><div id="pistas-horizontais" class="lista-pistas"></div></div>
+              <div class="grupo-pistas"><h3><svg aria-hidden="true"><use href="#icone-baixo"></use></svg>Verticais</h3><div id="pistas-verticais" class="lista-pistas"></div></div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    
+
+    <section id="verificacoes" class="verificacoes" aria-labelledby="titulo-verificacoes" hidden>
+      <h2 id="titulo-verificacoes">Verificações automáticas</h2>
+      <p id="resumo-verificacoes"></p><ul id="lista-verificacoes"></ul>
+      <p>Esses testes verificam as regras em JavaScript. Navegação real, aparência, armazenamento bloqueado e recarga também precisam de testes manuais.</p>
+    </section>
+
+    <footer class="rodape">
+      <div class="assinatura"><svg aria-hidden="true"><use href="#icone-marca"></use></svg><span>Feito por <strong>Andrey Sebastian Justino</strong></span></div>
+      <span>Aprender é fazer conexões.</span>
+    </footer>
+  </main>
+
+  <dialog id="modal-reinicio" aria-labelledby="titulo-modal" aria-describedby="descricao-modal">
+    <div class="icone-modal"><svg aria-hidden="true"><use href="#icone-reiniciar"></use></svg></div>
+    <h2 id="titulo-modal">Recomeçar a cruzadinha?</h2>
+    <p id="descricao-modal"></p>
+    <div class="acoes-modal"><button id="cancelar-reinicio" class="botao botao-secundario" type="button" autofocus>Cancelar</button><button id="confirmar-reinicio" class="botao botao-principal" type="button">Reiniciar</button></div>
+  </dialog>
+  <div id="anuncio" class="somente-leitor" aria-live="polite"></div>
+  <noscript><p class="conteudo erro-inicializacao">Ative o JavaScript do navegador para jogar a cruzadinha e o quiz.</p></noscript>
+
+  <script src="script.js"></script>
+</body>
+</html>
