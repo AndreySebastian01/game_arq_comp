@@ -103,23 +103,6 @@ As coordenadas originais foram mantidas: 14 linhas, 16 colunas, 94 casas ocupada
 | 12 | CPU | Chip que busca, interpreta e executa as instruções dos programas. |
 | 13 | ROM | Memória gravada na fábrica, não volátil, que normalmente só pode ser lida. |
 
-## Organização Do Código E Commits
-
-O arquivo `script.js` está organizado em blocos comentados, com dados no topo, nomes em português e funções pequenas; o `style.css` mantém as variáveis e as regras responsivas separadas do HTML. A sequência abaixo serve para o autor organizar os arquivos por etapas no histórico. Não foram feitos commits nem publicação automaticamente.
-
-| Etapa | Trecho principal | Mensagem sugerida |
-| --- | --- | --- |
-| 1 | Dados, coordenadas, validação e montagem das casas e pistas | `feat: adiciona tabuleiro com as 16 palavras` |
-| 2 | Seleção, digitação, setas, Backspace e Tab | `feat: implementa digitacao e navegacao` |
-| 3 | Conferência, resultados, dicas e revelação | `feat: implementa conferencia e ajudas` |
-| 4 | Pontuação e cronômetro | `feat: adiciona contador e cronometro` |
-| 5 | Quiz, Fisher-Yates e feedback | `feat: adiciona quiz` |
-| 6 | Salvamento e restauração dos dois jogos | `feat: salva o progresso no navegador` |
-| 7 | `style.css`: CSS, responsividade e modo escuro | `style: aplica paleta e modo escuro` |
-| 8 | Instruções, fontes e roteiro de testes | `docs: cria README` |
-
-O enunciado exige **pelo menos seis commits em pelo menos dois dias diferentes**. O autor deve fazê-los nas datas reais, sem alterar artificialmente o histórico. Adicionar todos os arquivos em um único commit não atende a essa exigência.
-
 ## Verificação
 
 Ao abrir, `validarDados()` verifica limites, letras dos cruzamentos, sobreposições, adjacências indevidas, ligação entre todas as palavras, limite de palavras nas pistas, presença direta do termo na pista e alternativas duplicadas.
@@ -148,19 +131,6 @@ Abra `index.html?testes=1` ou acrescente `?testes=1` ao endereço publicado para
 - [ ] Conferir a exceção do CDN antes de considerar atendidos todos os requisitos do enunciado.
 - [ ] Verificar que não foram incluídos RA, e-mail, telefone ou outros dados pessoais.
 
-## Suposições
-
-- Reiniciar afeta somente a modalidade do botão acionado, preservando a outra.
-- A troca entre as abas não pausa o cronômetro da cruzadinha. O tempo com a página fechada não é somado; a reabertura retoma os segundos salvos.
-- Editar um tabuleiro concluído reabre a partida e retoma o tempo se ele já havia começado. Um tabuleiro preenchido somente com revelações pode terminar em `00:00`.
-- Uma explicação já liberada continua disponível após editar a palavra, até reiniciar.
-- Uma palavra revelada recebe ✗ na pista e vale zero, mesmo com as casas corretas. As cores das casas representam a correção das letras, não os pontos.
-- As letras compartilhadas contam normalmente para as outras palavras. A penalidade pertence somente à palavra em que a ajuda foi usada.
-- Setas pulam espaços vazios no mesmo eixo; Tab percorre números e, em um início compartilhado, prioriza a horizontal.
-- O teclado na tela é uma ajuda opcional própria, não o teclado virtual do sistema operacional.
-- A interface detecta o tema do sistema na primeira visita e oferece um botão no cabeçalho para alternar manualmente entre modo claro e escuro.
-- A execução pressupõe um navegador atual com suporte a `dialog`, CSS Grid, `normalize` e `localStorage` quando permitido.
-
 ## Fontes
 
 - TANENBAUM, Andrew S. *Organização Estruturada de Computadores*. 5ª ed. Pearson, 2007.
@@ -168,16 +138,6 @@ Abra `index.html?testes=1` ou acrescente `?testes=1` ao endereço publicado para
 - PAIXÃO, Renato Rodrigues. *Arquitetura de Computadores*. Saraiva, 2017.
 
 As pistas, perguntas, alternativas e explicações foram fornecidas na especificação. O e-book de Paixão não foi consultado nesta implementação; a conferência final segundo esse material cabe ao autor. As distinções ROM/EEPROM/Flash e Dual core/Quad core foram preservadas.
-
-## Publicação Pelo Autor
-
-1. Crie o repositório público `arqcomp-cruzadinha`.
-2. Mantenha `index.html` na raiz, junto com este README. Não inclua dados pessoais além do nome autorizado.
-3. Faça os commits por etapas, em pelo menos dois dias diferentes, conforme exigido.
-4. Abra **Settings > Pages > Deploy from a branch** e selecione **main > / (root)**.
-5. Substitua `SEU-USUARIO` no link pelo seu usuário real.
-6. Teste o endereço publicado em janela anônima. O progresso dessa janela é independente do navegador normal.
-7. No Moodle, envie somente o link publicado, conforme o enunciado.
 
 ## Autor
 
