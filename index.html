@@ -168,7 +168,85 @@
       </div>
     </section>
 
-    
+    <section id="secao-quiz" class="secao-jogo" role="tabpanel" aria-labelledby="aba-quiz" hidden>
+      <div class="area-quiz">
+        <div class="topo-quiz">
+          <span class="placar-quiz"><svg aria-hidden="true"><use href="#icone-trofeu"></use></svg><span id="placar-quiz">Acertos: 0 de 16</span></span>
+          <button id="reiniciar-quiz" class="botao botao-discreto" type="button"><svg aria-hidden="true"><use href="#icone-reiniciar"></use></svg>Reiniciar</button>
+        </div>
+        <div class="cartao-quiz">
+          <div class="trilho-quiz" aria-hidden="true"><div class="progresso-quiz" id="progresso-quiz"></div></div>
+          <div id="pergunta-quiz" class="pergunta-quiz">
+            <p id="numero-pergunta" class="numero-pergunta"></p>
+            <h2 id="texto-pergunta" tabindex="-1"></h2>
+            <p class="instrucao-quiz">Qual é a conexão certa? Escolha uma alternativa.</p>
+            <div id="alternativas" class="alternativas"></div>
+            <div id="retorno-quiz" class="retorno-quiz" aria-live="polite" hidden>
+              <h3 id="titulo-retorno"></h3>
+              <p><strong id="termo-retorno"></strong> <span id="explicacao-retorno"></span></p>
+              <div class="rodape-retorno"><button id="proxima-pergunta" class="botao botao-principal" type="button"><span id="texto-proxima">Próxima pergunta</span><svg aria-hidden="true"><use href="#icone-direita"></use></svg></button></div>
+            </div>
+          </div>
+          <div id="resultado-quiz" class="resultado-quiz" hidden>
+            <div class="icone-resultado"><svg aria-hidden="true"><use href="#icone-trofeu"></use></svg></div>
+            <p class="sobretitulo">DESAFIO CONCLUÍDO</p>
+            <div class="total-quiz"><span id="total-quiz">0</span><small> / 16</small></div>
+            <h2>Mais uma conexão com o conhecimento.</h2>
+            <p id="resumo-quiz"></p>
+            <button id="novo-quiz" class="botao botao-principal" type="button"><svg aria-hidden="true"><use href="#icone-reiniciar"></use></svg>Jogar novamente</button>
+          </div>
+        </div>
+        <p class="nota-quiz"><svg aria-hidden="true"><use href="#icone-livro"></use></svg>Os mesmos 16 conceitos. Uma nova forma de aprender.</p>
+      </div>
+    </section>
+
+    <section id="secao-memoria" class="secao-jogo" role="tabpanel" aria-labelledby="aba-memoria" hidden>
+      <div class="area-memoria">
+        <div class="cartao-tabuleiro">
+          <div class="topo-tabuleiro topo-memoria">
+            <div>
+              <h2>Jogo da Memória</h2>
+              <span class="texto-auxiliar">Forme os pares entre cada termo e a sua definição.</span>
+            </div>
+            <div class="controles-memoria">
+              <div class="seletor-pares" role="group" aria-label="Quantidade de pares">
+                <button id="memoria-8-pares" class="botao-pares ativo" type="button">8 pares</button>
+                <button id="memoria-16-pares" class="botao-pares" type="button">16 pares</button>
+              </div>
+              <div class="indicadores">
+                <div class="indicador"><span class="rotulo">PARES</span><strong id="pares-memoria">0 de 8</strong></div>
+                <div class="indicador"><span class="rotulo">TENTATIVAS</span><strong id="tentativas-memoria">0</strong></div>
+                <div class="indicador"><span class="rotulo">TEMPO</span><strong><svg aria-hidden="true"><use href="#icone-relogio"></use></svg><span id="tempo-memoria">00:00</span></strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="envoltorio-memoria">
+            <div id="grade-memoria" class="grade-memoria" aria-label="Cartas do jogo da memória"></div>
+          </div>
+
+          <div class="acoes-tabuleiro acoes-memoria">
+            <div id="painel-memoria" class="painel-memoria-retorno" aria-live="polite">
+              <span class="rotulo" id="rotulo-memoria">COMO JOGAR</span>
+              <strong id="termo-memoria">Vire duas cartas para conectar um conceito à sua pista.</strong>
+              <p id="explicacao-memoria">Ao encontrar um par correto, a explicação completa do termo aparece aqui.</p>
+            </div>
+            <button id="reiniciar-memoria" class="botao botao-discreto" type="button"><svg aria-hidden="true"><use href="#icone-reiniciar"></use></svg>Reiniciar</button>
+          </div>
+
+          <div id="vitoria-memoria" class="vitoria" role="status" hidden>
+            <svg aria-hidden="true"><use href="#icone-trofeu"></use></svg>
+            <div class="vitoria-memoria-conteudo">
+              <div>
+                <h3>Todos os pares foram encontrados!</h3>
+                <p id="resumo-vitoria-memoria"></p>
+              </div>
+              <button id="novo-memoria" class="botao botao-principal" type="button"><svg aria-hidden="true"><use href="#icone-reiniciar"></use></svg>Jogar novamente</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section id="verificacoes" class="verificacoes" aria-labelledby="titulo-verificacoes" hidden>
       <h2 id="titulo-verificacoes">Verificações automáticas</h2>
